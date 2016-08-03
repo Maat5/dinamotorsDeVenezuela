@@ -1,0 +1,32 @@
+{
+  "name": "dinamotors",
+  "version": "1.0.0",
+  "description": "Dinamotors de Venezuela Web Page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcdevs/dinamotorsDeVenezuela.git"
+  },
+  "author": "DcDevs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dcdevs/dinamotorsDeVenezuela/issues"
+  },
+  "homepage": "https://github.com/dcdevs/dinamotorsDeVenezuela#readme",
+  "dependencies": {
+    "browser-sync": "^2.14.0",
+    "browserify": "^13.1.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-flatten": "^0.3.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-stylus": "^2.5.0",
+    "gulp-uglify": "^2.0.0",
+    "nib": "^1.1.0"
+  }
+}
