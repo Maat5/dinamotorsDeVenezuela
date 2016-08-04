@@ -1,5 +1,2 @@
-$(document).ready(function() {
-
-  console.log('finished');
-
-});
+var $ = require('jquery');
+$('h1').html('Dinamotors de Venezuela');

@@ -5,7 +5,12 @@ var minify = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
-var flatten = require('gulp-flatten')
+var flatten = require('gulp-flatten');
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
+var watchify = require('watchify');
+var gutil = require('gulp-util');
 var nib = require('nib');
 var browserSync = require('browser-sync');
 
@@ -28,13 +33,18 @@ gulp.task('stylus', function() {
     .pipe(minify())
     .pipe(gulp.dest('build/assets/css/'))
 });
-
+function bundle(b) {
+  return b.bundle()
+    .pipe(source('app.min.js'))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(gulp.dest('./build/js'))
+    .pipe(browserSync.reload({stream:true}));
+}
 /* Concat repo JS*/
 gulp.task('appScripts', function() {
-  return gulp.src('src/js/' + '**/*.js')
-    .pipe(concat('app.min.js'))
-    .pipe(uglify({ mangle: false }))
-    .pipe(gulp.dest('build/js/'));
+  var b = browserify('./src/js/index.js');
+  return bundle(b);
 });
 
 /* Load templates */
@@ -49,6 +59,16 @@ gulp.task('images', function() {
   return gulp.src('app/assets/img/' + '*')
     .pipe(gulp.dest('build/assets/img'))
 });
+/* Watch */
+gulp.task('watch', function() {
+  var b = browserify('./src/js/index.js', watchify.args);
+  var w = watchify(b)
+    .on('update', bundle(w))
+    .on('log', gutil.log);
+  gulp.watch(['src/**/**/*.html'], ['templates']);
+  return bundle(w);
+});
+
 
 /* Server init */
 gulp.task('browserSync', function(){
@@ -69,6 +89,7 @@ gulp.task('build', [
   'images',
   'appScripts',
   'templates',
+  'watch'
 ]);
 
 /* Init app*/
