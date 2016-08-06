@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var clean = require('gulp-clean');
 var stylus = require('gulp-stylus');
-var minify = require('gulp-minify-css');
+var minify = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
@@ -13,7 +13,7 @@ var watchify = require('watchify');
 var gutil = require('gulp-util');
 var nib = require('nib');
 var browserSync = require('browser-sync');
-
+var compress = require('compression');
 
 /* Clean task*/
 gulp.task('clean', function() {
@@ -38,7 +38,7 @@ function bundle(b) {
   return b.bundle()
     .pipe(source('app.min.js'))
     .pipe(buffer())
-    .pipe(uglify())
+    .pipe(uglify({mangle: false}))
     .pipe(gulp.dest('./build/js'))
     .pipe(browserSync.reload({stream:true}));
 }
@@ -80,9 +80,10 @@ gulp.task('browserSync', function(){
   browserSync({
     host: 'localhost',
     port: 3000,
-    // open: 'external',
+    open: 'external',
     server: {
-      baseDir: 'build/'
+      baseDir: 'build/',
+      middleware: [compress()]
     }
   })
 });
