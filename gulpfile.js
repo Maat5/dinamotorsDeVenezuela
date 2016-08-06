@@ -62,10 +62,11 @@ gulp.task('images', function() {
 /* Watch */
 gulp.task('watch', function() {
   var b = browserify('./src/js/index.js', watchify.args);
-  var w = watchify(b)
-    .on('update', bundle(w))
-    .on('log', gutil.log);
-  gulp.watch(['src/**/**/*.html'], ['templates']);
+  var w = watchify(b);
+  w.on('update', function(){
+    bundle(w);
+  })
+  .on('log', gutil.log);
   return bundle(w);
 });
 
