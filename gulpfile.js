@@ -6,6 +6,7 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var flatten = require('gulp-flatten');
+var subree = require('gulp-subtree');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
@@ -74,7 +75,6 @@ gulp.task('watch', function() {
   return bundle(w);
 });
 
-
 /* Server init */
 gulp.task('browserSync', function(){
   browserSync({
@@ -88,6 +88,15 @@ gulp.task('browserSync', function(){
   })
 });
 
+/* Upload to production */
+gulp.task('release', function(){
+  return gulp.src('build')
+    .pipe(subree({
+      remote: 'origin',
+      branch: 'test',
+      message: 'Uploading to production'
+    }));
+});
 
 /* Build */
 gulp.task('build', [
