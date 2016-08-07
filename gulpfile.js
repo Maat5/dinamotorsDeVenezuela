@@ -59,7 +59,7 @@ gulp.task('templates', function() {
 
 /* Load Images */
 gulp.task('images', function() {
-  return gulp.src('app/assets/img/' + '*')
+  return gulp.src('./src/assets/img/*')
     .pipe(gulp.dest('build/assets/img'))
 });
 /* Watch */
