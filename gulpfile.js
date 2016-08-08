@@ -15,6 +15,7 @@ var gutil = require('gulp-util');
 var nib = require('nib');
 var browserSync = require('browser-sync');
 var compress = require('compression');
+var imageop = require('gulp-image-optimization');
 
 /* Clean task*/
 gulp.task('clean', function() {
@@ -61,6 +62,16 @@ gulp.task('templates', function() {
 gulp.task('images', function() {
   return gulp.src('./src/assets/img/*')
     .pipe(gulp.dest('build/assets/img'))
+});
+/* Load Images */
+gulp.task('compressImages', function(cb) {
+  return gulp.src(['./src/assets/img/*'])
+    .pipe(imageop({
+        optimizationLevel: 5,
+        progressive: true,
+        interlaced: true
+    }))
+    .pipe(gulp.dest('build/assets/img'));
 });
 /* Watch */
 gulp.task('watch', function() {
