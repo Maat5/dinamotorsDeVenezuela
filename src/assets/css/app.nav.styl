@@ -1,0 +1,29 @@
+nav
+  background-color $bg-color
+  padding 20px 25px
+  span.toggle-menu
+    color #fff
+    display none
+    &:hover
+      cursor pointer
+  ul.navbar
+    list-style none
+    margin 0
+    text-align center
+    li
+      display inline-block
+      margin  0 30px
+      vertical-align center
+      a
+        color #fff
+        text-decoration none
+      @media (max-width: 700px)
+        margin 0 20px
+
+@media (max-width: 600px)
+  nav
+    padding 15px
+    span.toggle-menu
+      display block
+    ul.navbar
+      display none
