@@ -1,6 +1,85 @@
 .contact-container
+  min-height 50vh
   display flex
-  flex-col()
+  flex-row-wrap()
   app-bg(blue-block, font-white)
+  padding 20px
+  color white-block
+
+.contact-info
+  margin-top 10px
+  text-align left
+  .follow-us
+    display flex
+    flex-flow row wrap
+    justify-content flex-start
+    align-items center
+    .networks
+      margin-left 10px
+      a
+        padding 1rem 1rem
+        &:hover,
+        &:active,
+        &:focus
+          color green
+  p
+    white-space pre-line
+    line-height 1.5em
+  span
+    display block
+    padding 2px
+  a
+    text-decoration none
+    color white-block
+    cursor pointer
+
+.contact-form
+  text-align center
+  form
+    display flex
+    flex-col()
+    flex 1
+    justify-content flex-end
+    align-items center
+    .contact-inputs
+      flex 1 1 auto
+      margin-top 10px
+    .contact-input
+      min-width 300px
+      padding .5rem
+      border 0
+      border-radius 5px
+      font-family inherit
+      font-size 14px
+      background white-block
+      :focus,
+      :active
+        outline none
+        border 0
+        border-radius 5px
+    .contact-send
+      cursor pointer
+      margin-top 15px
+      padding .5rem
+      border 0
+      border-radius 2px
+      color font-black
+      background white-block
+      &:hover,
+      &:active,
+      &:focus
+        app-bg(green, font-white)
 
 
+textarea
+  resize none
+
+.title-underline
+  border-bottom solid 2px font-white
+  display inline
+  padding-bottom 3px
+
+@media (max-width: 600px)
+  .contact-container
+    flex-direction column-reverse
+    flex-wrap wrap
