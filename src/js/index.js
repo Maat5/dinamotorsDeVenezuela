@@ -15,6 +15,9 @@ $(document).ready(function(){
   //load services template
   $('#services').load('services.html');
 
+  //load location template
+  $('#location').load('location.html');
+
   //load contact template
   $('#contact').load('contact.html');
 
