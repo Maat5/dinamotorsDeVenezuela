@@ -13,11 +13,11 @@ body
 
 .row
   flex-row()
-  flex 1
+  flex 1 1
 
 .col
   flex-col()
-  flex 1
+  flex 1 1
 
 .p-sm
   padding 10px
@@ -40,3 +40,9 @@ body
 
 .text-blue
   text-color(font-blue)
+
+@media (max-width: 600px)
+  .row
+    flex: 1 1 auto
+  .col
+    flex 1 1 auto
