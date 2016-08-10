@@ -12,6 +12,9 @@ $(document).ready(function(){
   //load gallery template
   $('#gallery').load('gallery.html');
 
+  // load company template
+  $('#company').load('company.html');
+
   //load services template
   $('#services').load('services.html');
 
