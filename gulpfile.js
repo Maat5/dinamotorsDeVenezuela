@@ -114,7 +114,7 @@ gulp.task('release', function(){
 /* Build */
 gulp.task('build', [
   'stylus',
-  'images',
+  'compressImages',
   'appScripts',
   'templates',
   'watch'
