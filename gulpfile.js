@@ -16,6 +16,7 @@ var nib = require('nib');
 var browserSync = require('browser-sync');
 var compress = require('compression');
 var imageop = require('gulp-image-optimization');
+var htmlmin = require('gulp-htmlmin');
 
 /* Clean task*/
 gulp.task('clean', function() {
@@ -53,6 +54,7 @@ gulp.task('appScripts', function() {
 /* Load templates */
 gulp.task('templates', function() {
   return gulp.src('src/templates' + '*/*.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(flatten())
     .pipe(gulp.dest('build'))
     .pipe(browserSync.reload({stream:true}));
