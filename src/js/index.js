@@ -32,5 +32,12 @@ $(document).ready(function(){
 
   $('.toggle-menu').on('click', function(){
       $('.navbar').toggle('slow');
-  })
+  });
+
+  $('.nav-link').click(function(){
+    var toPage = $(this).find('a').attr('href');
+    $('html, body').animate({
+      scrollTop: $(toPage).offset().top
+    }, 2000);
+  });
 });
