@@ -29,4 +29,8 @@ $(document).ready(function(){
   previous.onclick = function(){
       previousSlide();
   };
+
+  $('.toggle-menu').on('click', function(){
+      $('.navbar').toggle('slow');
+  })
 });
