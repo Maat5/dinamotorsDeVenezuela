@@ -41,15 +41,15 @@ $(document).ready(function(){
     }, 2000);
   });
 
-  $('#sendMail').click(function() {
+  $('#form').on('submit', function(event) {
     var subject = $('#subject').val();
     var message = $('#message').val();
-    var from = $('email').val();
-    var mail = 'mailto:dinamotorsdevenezuela@gmail.com?subject=' + subject + '&body=' + message + '&from=' + from;
-
-    $(this).attr('href', mail);
-
-    $('#form').trigger('reset');
+    var from = $('#email').val();
+    var mail = 'mailto:dinamotorsdevenezuela@gmail.com?body=' + message + '&subject=' + subject+ '&cc=' + from;
+    $('#form').attr("action", mail);
+    setTimeout(function() {
+      $('#form').trigger('reset');
+    }, 1000);
   });
 
 });
