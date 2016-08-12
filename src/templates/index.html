@@ -175,20 +175,20 @@
         </div>
         <div class="contact-form col p-sm">
           <h2 class="title-underline"> Contáctanos</h2>
-          <form class="m-t-lg">
+          <form class="m-t-lg" id="form">
             <div class="contact-inputs">
-              <input class="contact-input" type="text" id="name" placeholder="Nombre">
+              <input class="contact-input" type="text" id="name" name="name" placeholder="Nombre" required="true">
             </div>
             <div class="contact-inputs">
-              <input class="contact-input" type="email" id="email" placeholder="Email">
+              <input class="contact-input" type="email" id="email" name="from" placeholder="Email" required="true">
             </div>
             <div class="contact-inputs">
-              <input class="contact-input" type="text" id="subject" placeholder="Asunto">
+              <input class="contact-input" type="text" id="subject" name="subject" placeholder="Asunto" required="true">
             </div>
             <div class="contact-inputs">
-              <textarea class="contact-input" name="message" id="message" cols="30" rows="10" placeholder="Mensaje"></textarea>
+              <textarea class="contact-input" name="message" id="message" cols="30" rows="10" placeholder="Mensaje" required="true"></textarea>
             </div>
-            <input class="contact-send" type="submit" value="Enviar">
+            <a id="sendMail" class="contact-send" > Enviar</a>
           </form>
         </div>
       </div>

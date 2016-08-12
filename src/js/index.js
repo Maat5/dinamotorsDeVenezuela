@@ -40,4 +40,16 @@ $(document).ready(function(){
       scrollTop: $(toPage).offset().top
     }, 2000);
   });
+
+  $('#sendMail').click(function() {
+    var subject = $('#subject').val();
+    var message = $('#message').val();
+    var from = $('email').val();
+    var mail = 'mailto:dinamotorsdevenezuela@gmail.com?subject=' + subject + '&body=' + message + '&from=' + from;
+
+    $(this).attr('href', mail);
+
+    $('#form').trigger('reset');
+  });
+
 });
