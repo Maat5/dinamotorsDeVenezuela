@@ -4,7 +4,7 @@
     position absolute
     z-index 10
     font-size 0px
-    top (slide / 2)
+    top (slide / 2.2)
     width 100%
     .controls
       display inline-block
@@ -15,7 +15,9 @@
       color #fff
       opacity 1
       &:hover
-        transition color 0.5s ease
+        i
+          color font-blue
+          transition color 0.5s ease
     #next
       float right
   #slides
@@ -45,10 +47,10 @@
     #slides
       height slide-sm !important
     .buttons
-      top (slide-sm / 2) !important
+      top (slide-sm / 2.5) !important
 @media (max-width: 468px)
   #container-2
     #slides
       height slide-xs
     .buttons
-      top (slide-xs / 2) !important
+      top slide-xs !important
