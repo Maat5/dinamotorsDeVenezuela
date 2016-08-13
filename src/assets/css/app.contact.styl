@@ -18,10 +18,12 @@
       margin-left 10px
       a
         padding 1rem 1rem
-        &:hover,
-        &:active,
-        &:focus
-          color green
+        i
+          transition all ease 0.3s
+          &:hover,
+          &:active,
+          &:focus
+            transform scale(1.5)
   p
     white-space pre-line
     line-height 1.5em
@@ -65,10 +67,13 @@
       border-radius 2px
       color font-black
       background white-block
+      transition all ease 0.3s
       &:hover,
       &:active,
       &:focus
         app-bg(green, font-white)
+        transform scale(1.2)
+
 
 textarea
   resize none
