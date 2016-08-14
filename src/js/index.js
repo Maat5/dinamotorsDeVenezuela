@@ -49,6 +49,13 @@ $(document).ready(function(){
       scale    : 0.3
   }, 200);
 
+  sr.reveal('.services-dm', {
+    duration : 1000,
+    scale    : 0.5,
+    distance : "10px",
+    mobile   : true
+  }, 150);
+
   $('#form').on('submit', function(event) {
     var subject = $('#subject').val();
     var message = $('#message').val();
