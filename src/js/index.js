@@ -41,6 +41,14 @@ $(document).ready(function(){
     }, 2000);
   });
 
+  window.sr = ScrollReveal({ reset: true });
+
+  sr.reveal(".social-effect", {
+      duration : 600,
+      mobile   : true,
+      scale    : 0.3
+  }, 200);
+
   $('#form').on('submit', function(event) {
     var subject = $('#subject').val();
     var message = $('#message').val();
