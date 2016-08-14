@@ -56,6 +56,22 @@ $(document).ready(function(){
     mobile   : true
   }, 150);
 
+  sr.reveal('.right-effect', {
+    delay    : 200,
+    scale    : 0.5,
+    distance : "30px",
+    mobile   : true,
+    origin: "right"
+  }, 150);
+
+  sr.reveal('.left-effect', {
+    delay    : 200,
+    scale    : 0.5,
+    distance : "30px",
+    mobile   : true,
+    origin: "left"
+  }, 150);
+
   $('#form').on('submit', function(event) {
     var subject = $('#subject').val();
     var message = $('#message').val();
