@@ -7,27 +7,28 @@ $(document).ready(function(){
   var slideInterval = setInterval(nextSlide,4000);
 
   function nextSlide(){
-      goToSlide(currentSlide+1);
+    goToSlide(currentSlide+1);
   }
 
   function previousSlide(){
-      goToSlide(currentSlide-1);
+    goToSlide(currentSlide-1);
   }
 
   function goToSlide(n){
-      slides[currentSlide].className = 'slide';
-      currentSlide = (n+slides.length)%slides.length;
-      slides[currentSlide].className = 'slide showing';
+    slides[currentSlide].className = 'slide';
+    currentSlide = (n+slides.length)%slides.length;
+    slides[currentSlide].className = 'slide showing';
   }
 
   var next = document.getElementById('next');
   var previous = document.getElementById('previous');
 
   next.onclick = function(){
-      nextSlide();
+    nextSlide();
   };
+
   previous.onclick = function(){
-      previousSlide();
+    previousSlide();
   };
 
   $('.toggle-menu').on('click', function(){
@@ -40,6 +41,45 @@ $(document).ready(function(){
       scrollTop: $(toPage).offset().top
     }, 2000);
   });
+
+  window.sr = ScrollReveal({ reset: true });
+
+  sr.reveal(".social-effect", {
+      duration : 600,
+      mobile   : true,
+      scale    : 0.3
+  }, 150);
+
+  sr.reveal('.services-dm', {
+    duration : 1000,
+    scale    : 0.5,
+    distance : "10px",
+    mobile   : true
+  }, 150);
+
+  sr.reveal('.right-effect', {
+    delay    : 200,
+    scale    : 0.5,
+    distance : "30px",
+    mobile   : true,
+    origin: "right"
+  }, 50);
+
+  sr.reveal('.left-effect', {
+    delay    : 200,
+    scale    : 0.5,
+    distance : "30px",
+    mobile   : true,
+    origin: "left"
+  }, 50);
+
+  sr.reveal('.titles', {
+    duration : 1000,
+    scale    : 0.5,
+    distance : "10px",
+    origin   : "top",
+    mobile   : true
+  }, 100);
 
   $('#form').on('submit', function(event) {
     var subject = $('#subject').val();
