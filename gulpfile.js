@@ -59,7 +59,11 @@ gulp.task('templates', function() {
     .pipe(gulp.dest('build'))
     .pipe(browserSync.reload({stream:true}));
 });
-
+/* Load fontawesome */
+gulp.task('fontawesome', function() {
+  return gulp.src('./src/assets/fonts/*')
+    .pipe(gulp.dest('build/assets/fonts'))
+});
 /* Load Images */
 gulp.task('images', function() {
   return gulp.src('./src/assets/img/*')
@@ -113,6 +117,7 @@ gulp.task('release', function(){
 
 /* Build */
 gulp.task('build', [
+  'fontawesome',
   'stylus',
   'compressImages',
   'appScripts',
