@@ -17,6 +17,9 @@ var browserSync = require('browser-sync');
 var compress = require('compression');
 var imageop = require('gulp-image-optimization');
 var htmlmin = require('gulp-htmlmin');
+var iconfont = require('gulp-iconfont');
+var iconfontCss = require('gulp-iconfont-css');
+var runTimestamp = Math.round(Date.now()/1000);
 
 /* Clean task*/
 gulp.task('clean', function() {
@@ -115,9 +118,27 @@ gulp.task('release', function(){
     }));
 });
 
+/* generate icons */
+gulp.task('icons', function(){
+  gulp.src(['src/assets/svg/*.svg'])
+    .pipe(iconfontCss({
+      fontName: 'dina',
+      path: 'src/assets/css/font.css',
+      targetPath: '../css/icons.min.css',
+      fontPath: '../fonts/',
+      cssClass: 'dina'
+    }))
+    .pipe(iconfont({
+      fontName: 'dina'
+     }))
+    .pipe(gulp.dest('build/assets/fonts/'));
+});
+
+
 /* Build */
 gulp.task('build', [
   'fontawesome',
+  'icons',
   'stylus',
   'compressImages',
   'appScripts',
