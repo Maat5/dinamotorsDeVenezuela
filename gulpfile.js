@@ -19,8 +19,6 @@ var imageop = require('gulp-image-optimization');
 var htmlmin = require('gulp-htmlmin');
 var iconfont = require('gulp-iconfont');
 var iconfontCss = require('gulp-iconfont-css');
-var consolidate = require('gulp-consolidate');
-var async = require('async');
 var runTimestamp = Math.round(Date.now()/1000);
 
 /* Clean task*/
@@ -126,9 +124,9 @@ gulp.task('icons', function(){
     .pipe(iconfontCss({
       fontName: 'dina',
       path: 'src/assets/css/font.css',
-      targetPath: '../assets/css/icons.css',
+      targetPath: '../css/icons.min.css',
       fontPath: '../fonts/',
-      className: 'dina'
+      cssClass: 'dina'
     }))
     .pipe(iconfont({
       fontName: 'dina'
@@ -140,6 +138,7 @@ gulp.task('icons', function(){
 /* Build */
 gulp.task('build', [
   'fontawesome',
+  'icons',
   'stylus',
   'compressImages',
   'appScripts',
