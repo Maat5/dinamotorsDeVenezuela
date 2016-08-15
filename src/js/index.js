@@ -72,6 +72,14 @@ $(document).ready(function(){
     origin: "left"
   }, 150);
 
+  sr.reveal('.titles', {
+    duration : 1000,
+    scale    : 0.5,
+    distance : "10px",
+    origin   : "top",
+    mobile   : true
+  }, 150);
+
   $('#form').on('submit', function(event) {
     var subject = $('#subject').val();
     var message = $('#message').val();
