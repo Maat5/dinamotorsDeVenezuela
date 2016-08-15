@@ -20,10 +20,14 @@ $(document).ready(function(){
     slides[currentSlide].className = 'slide showing';
   }
 
-  $('.next').click(function(){
+  var next = document.getElementById('next');
+  var previous = document.getElementById('previous');
+
+  next.onclick = function(){
     nextSlide();
   };
-  $('.previous').click(function(){
+
+  previous.onclick = function(){
     previousSlide();
   };
 
