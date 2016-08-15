@@ -55,23 +55,39 @@ $(document).ready(function(){
     scale    : 0.5,
     distance : "10px",
     mobile   : true
-  }, 150);
+  }, 200);
 
   sr.reveal('.right-effect', {
     delay    : 200,
     scale    : 0.5,
     distance : "30px",
     mobile   : true,
-    origin: "right"
-  }, 50);
+    origin   : "right"
+  }, 150);
 
   sr.reveal('.left-effect', {
     delay    : 200,
     scale    : 0.5,
     distance : "30px",
     mobile   : true,
-    origin: "left"
-  }, 50);
+    origin   : "left"
+  }, 150);
+
+  sr.reveal('.contact-dm', {
+    duration : 1000,
+    scale    : 0.5,
+    distance : "10px",
+    mobile   : true,
+    origin   : "left"
+  }, 100);
+
+  sr.reveal('.contact-forms', {
+    duration : 1000,
+    scale    : 0.5,
+    distance : "10px",
+    mobile   : true,
+    origin   : "right"
+  }, 100);
 
   sr.reveal('.titles', {
     duration : 1000,
@@ -79,7 +95,7 @@ $(document).ready(function(){
     distance : "10px",
     origin   : "top",
     mobile   : true
-  }, 100);
+  }, 150);
 
   $('#form').on('submit', function(event) {
     var subject = $('#subject').val();
