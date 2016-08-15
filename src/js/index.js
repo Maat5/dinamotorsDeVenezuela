@@ -47,7 +47,7 @@ $(document).ready(function(){
       duration : 600,
       mobile   : true,
       scale    : 0.3
-  }, 200);
+  }, 150);
 
   sr.reveal('.services-dm', {
     duration : 1000,
@@ -62,7 +62,7 @@ $(document).ready(function(){
     distance : "30px",
     mobile   : true,
     origin: "right"
-  }, 150);
+  }, 50);
 
   sr.reveal('.left-effect', {
     delay    : 200,
@@ -70,7 +70,7 @@ $(document).ready(function(){
     distance : "30px",
     mobile   : true,
     origin: "left"
-  }, 150);
+  }, 50);
 
   sr.reveal('.titles', {
     duration : 1000,
@@ -78,7 +78,7 @@ $(document).ready(function(){
     distance : "10px",
     origin   : "top",
     mobile   : true
-  }, 150);
+  }, 100);
 
   $('#form').on('submit', function(event) {
     var subject = $('#subject').val();
