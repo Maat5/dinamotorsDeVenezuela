@@ -1,5 +1,4 @@
 var $ = require('jquery');
-$('h1').html('Dinamotors de Venezuela');
 
 $(document).ready(function(){
   var slides = document.querySelectorAll('#slides .slide');
