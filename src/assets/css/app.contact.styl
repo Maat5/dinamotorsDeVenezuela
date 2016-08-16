@@ -37,42 +37,48 @@
 
 .contact-form
   text-align center
-  form
-    display flex
-    flex-col()
+  .login
+    position relative
+    background font-blue
+    display flex   flex-col()
     flex 1
     justify-content flex-end
     align-items center
-    .contact-inputs
-      flex 1 1 auto
-      margin-top 10px
-    .contact-input
-      min-width 300px
-      padding .5rem
-      border 0
-      border-radius 5px
-      font-family inherit
-      font-size 14px
-      background white-block
-      :focus,
-      :active
-        outline none
-        border 0
-        border-radius 5px
-    .contact-send
-      cursor pointer
-      margin-top 15px
-      padding .5rem
-      border 0
-      border-radius 2px
-      color font-black
-      background white-block
-      transition all ease 0.3s
-      &:hover,
-      &:active,
-      &:focus
-        app-bg(green, font-white)
-        transform scale(1.2)
+    .input
+      position relative
+      width 60%
+      margin 10px auto
+      span
+        position absolute
+        display block
+        color darken(font-blue, 10%)
+        left 10px
+        top 8px
+        font-size 20px
+      input
+        width 100%
+        padding 10px 5px 10px 40px
+        display block
+        border 1px solid font-black
+        border-radius 4px
+        transition 0.2s ease-out
+        color darken(font-blue, 30%)
+        &:focus
+          padding 10px 5px 10px 10px
+          outline 0
+          border-color: font-black
+      textarea
+        width 100%
+        padding 10px 5px 10px 40px
+        display block
+        border 1px solid font-black
+        border-radius 4px
+        transition 0.2s ease-out
+        color darken(font-blue, 30%)
+        &:focus
+          padding 10px 5px 10px 10px
+          outline 0
+          border-color: font-black
 
 .special-span
   font-size 1.5em

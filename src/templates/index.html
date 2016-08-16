@@ -195,18 +195,22 @@
           <div>
             <h2 class="title-underline contact-forms"> Contáctanos</h2>
           </div>
-          <form class="m-t-lg" id="form">
-            <div class="contact-inputs contact-forms">
-              <input class="contact-input" type="text" id="name" name="name" placeholder="Nombre" required="true">
+          <form class="m-t-lg login contact-forms" id="form">
+            <div class="input contact-forms">
+              <input type="text" placeholder="Nombre" id="name" name="name" required="true">
+              <span><i class="fa fa-user"></i></span>
             </div>
-            <div class="contact-inputs contact-forms">
-              <input class="contact-input" type="email" id="email" name="from" placeholder="Email" required="true">
+            <div class="input contact-forms">
+              <input type="email" placeholder="Email" id="email" name="from" required="true">
+              <span><i class="fa fa-envelope"></i></span>
             </div>
-            <div class="contact-inputs contact-forms">
-              <input class="contact-input" type="text" id="subject" name="subject" placeholder="Asunto" required="true">
+            <div class="input contact-forms">
+              <input type="text" placeholder="Asunto" id="subject" name="subject" required="true">
+              <span><i class="fa fa-pencil-square-o"></i></span>
             </div>
-            <div class="contact-inputs contact-forms">
-              <textarea class="contact-input" name="body" id="message" cols="30" rows="10" placeholder="Mensaje" required="true"></textarea>
+            <div class="input contact-forms">
+              <textarea name="body" id="message" cols="30" rows="10" placeholder="Mensaje" required="true"></textarea>
+              <span><i class="fa fa-align-left"></i></span>
             </div>
             <!-- <a id="sendMail" class="contact-send" > Enviar</a> -->
             <input  class="contact-send contact-forms" type="submit" value="Enviar">

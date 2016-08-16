@@ -1,6 +1,16 @@
 var $ = require('jquery');
 
 $(document).ready(function(){
+
+  $( ".input" ).focusin(function() {
+    $( this ).find( "span" ).animate({"opacity":"0"}, 200);
+  });
+
+  $( ".input" ).focusout(function() {
+    $( this ).find( "span" ).animate({"opacity":"1"}, 300);
+  });
+
+
   var slides = document.querySelectorAll('#slides .slide');
   var currentSlide = 0;
   var slideInterval = setInterval(nextSlide,4000);
