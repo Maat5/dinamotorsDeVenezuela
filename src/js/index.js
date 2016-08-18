@@ -72,7 +72,7 @@ $(document).ready(function(){
     distance : "30px",
     mobile   : true,
     origin   : "right"
-  }, 150);
+  }, 200);
 
   sr.reveal('.left-effect', {
     delay    : 200,
@@ -80,7 +80,7 @@ $(document).ready(function(){
     distance : "30px",
     mobile   : true,
     origin   : "left"
-  }, 150);
+  }, 200);
 
   sr.reveal('.contact-dm', {
     duration : 1000,
