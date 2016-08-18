@@ -113,7 +113,7 @@ gulp.task('release', function(){
   return gulp.src('build')
     .pipe(subree({
       remote: 'origin',
-      branch: 'test',
+      branch: 'gh-pages',
       message: 'Uploading to production'
     }));
 });
